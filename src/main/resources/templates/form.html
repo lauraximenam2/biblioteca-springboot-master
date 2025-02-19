@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Libro</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Crear Nuevo Libro</h1>
+    <form action="#" th:action="@{/createBook}" th:object="${book}" method="post">
+        <p>
+            <label for="title">📖 Título:</label>
+            <input type="text" id="title" th:field="*{title}" required />
+        </p>
+        <p>
+            <label for="author">✍️ Autor:</label>
+            <input type="text" id="author" th:field="*{author}" required />
+        </p>
+        <p>
+            <input type="submit" value="📚 Crear" />
+            <input type="reset" value="🔄 Reset" />
+        </p>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>📄 Resultado</h1>
+
+    <p><strong>Título:</strong> <span th:text="${book.title}">Ejemplo de Título</span></p>
+    <p><strong>Autor:</strong> <span th:text="${book.author}">Ejemplo de Autor</span></p>
+
+    <a href="/createBook">➕ Crear otro libro</a>
+    <a href="/books">📚 Ver todos los libros</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar Libro</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>🔍 Buscar Libro</h1>
+
+    <form action="#" th:action="@{/searchBook}" method="get">
+        <p>
+            <label for="texto"><strong>Título:</strong></label>
+            <input type="text" id="texto" th:name="texto" placeholder="Ingrese el título del libro" />
+        </p>
+        <p>
+            <input type="submit" value="Buscar 📖" />
+            <input type="reset" value="Limpiar ❌" />
+        </p>
+    </form>
+
+    <table>
+        <tr>
+            <th>Título</th>
+            <th>Autor</th>
+        </tr>
+        <tr th:each="book : ${libros}">
+            <td th:text="${book.title}">Ejemplo de Título</td>
+            <td th:text="${book.author}">Ejemplo de Autor</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
