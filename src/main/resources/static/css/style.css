@@ -119,6 +119,31 @@ tr:hover {
     transition: background 0.3s ease;
 }
 
+/* Enlaces de navegación */
+.nav-link {
+    display: block; /* Cada enlace ocupará su propia línea */
+    background-color: #b0b0b0; /* Color de fondo  */
+    color: white; /* Color de texto blanco */
+    padding: 12px 15px; /* Espaciado interno */
+    margin: 10px 0; /* Espaciado entre enlaces */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 1.1rem; /* Tamaño de fuente */
+    text-decoration: none; /* Quitar subrayado */
+    text-align: center; /* Centrar el texto */
+    transition: background 0.3s ease, transform 0.3s ease; /* Efecto suave al pasar el ratón */
+}
+
+/* Efecto hover */
+.nav-link:hover {
+    background-color: #0056b3; /* Cambiar el color de fondo al pasar el ratón */
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el ratón */
+}
+
+/* Efecto al hacer clic */
+.nav-link:active {
+    transform: scale(0.95); /* Efecto de reducción al hacer clic */
+}
+
 /* Responsive */
 @media screen and (max-width: 768px) {
     .container {

@@ -10,10 +10,12 @@
     <h1>Bienvenido a la Biblioteca</h1>
     <p th:text="${mensaje}"></p>
 
-    <a href="/createBook">📖 Crear libro</a>
-    <a href="/books">📚 Recuperar libros</a>
-    <a href="/api/pdfreport">📄 Generar PDF</a>
-    <a href="/api/authorsbvmc">🌍 Consulta en Wikidata</a>
+    <!-- Enlaces de navegación -->
+    <a href="/createBook" class="nav-link">📖 Crear libro</a>
+    <a href="/books" class="nav-link">📚 Recuperar libros</a>
+    <a href="/searchBook" class="nav-link">🔍 Buscar libro</a>
+    <a href="/api/pdfreport" class="nav-link">📄 Generar PDF</a>
+    <a href="/api/films" class="nav-link">🌍 Consulta en Wikidata</a>
 </div>
 </body>
 </html>

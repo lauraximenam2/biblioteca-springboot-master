@@ -31,7 +31,7 @@ public class ControllerTM {
 	@RequestMapping("/")
 	public String hola(Model modelo) {
 
-		modelo.addAttribute("mensaje", "Ejemplo biblioteca en Spring Boot");
+		modelo.addAttribute("mensaje", "Biblioteca de Laura y Mónica");
 		return "index";
 	}
 	
@@ -43,11 +43,18 @@ public class ControllerTM {
 	
 	@RequestMapping("/searchBook")
 	public String searchBook(@RequestParam(value = "texto", required = false) String texto, Model model) {
-		
-		// añadir servicio de busqueda llamada y logica para mostrar los resultados en el formulario
-		model.addAttribute("libros", bookService.search(texto));
-		
-	    return "searchForm";
+		//Añadimos la lógica para traer resultados según el texto ingresado del libro
+		List<Book> books;
+
+		if (texto != null && !texto.trim().isEmpty()) {
+			books = bookService.search(texto);
+		} else {
+			books = bookService.findAll(); // Si no hay texto, mostrar todos los libros
+		}
+
+		model.addAttribute("libros", books);
+		model.addAttribute("texto", texto); // Mantener el valor en el campo de búsqueda
+		return "searchForm";
 	}
 	
 	@PostMapping("/createBook")

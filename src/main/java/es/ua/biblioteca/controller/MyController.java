@@ -91,8 +91,8 @@ public class MyController {
                 .body(new InputStreamResource(bis));
     }
     
-    @RequestMapping("/authorsbvmc")
-    public String getAuthorsWikidata() {
-    	return wikidataService.getAuthors(10);
+    @RequestMapping("/films")
+    public String getFilmsWikidata() {
+    	return wikidataService.getFilms(10);
     }
 }

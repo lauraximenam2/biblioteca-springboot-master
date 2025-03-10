@@ -2,7 +2,8 @@ package es.ua.biblioteca.model;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
+//import java.util.Date;
+import java.time.LocalDate; // Importamos LocalDate
 import java.util.Objects;
 
 
@@ -18,20 +19,22 @@ public class Book {
     
     private String author;
     
-    private Date publication;
+    private LocalDate publication; //cambiamos el tipo
 
     public Book() {
     }
     
-    public Book(String title, String author) {
+    public Book(String title, String author, LocalDate publication) {
         this.title = title;
         this.author = author;
+        this.publication = publication; //añadido
     }
 
-    public Book(Long id, String title, String author) {
+    public Book(Long id, String title, String author, LocalDate publication) {
     	this.id = id;
         this.title = title;
         this.author = author;
+        this.publication = publication; //añadido
     }
 
     public Long getId() {
@@ -69,6 +72,7 @@ public class Book {
         var builder = new StringBuilder();
         builder.append("Book{id=").append(id).append(", title=")
                 .append(title).append(", author=")
+                .append(author).append(", publication=") //añadido
                 .append(author).append("}");
 
         return builder.toString();
@@ -90,11 +94,11 @@ public class Book {
 		this.author = author;
 	}
 
-	public Date getPublication() {
+	public LocalDate getPublication() {
 		return publication;
 	}
 
-	public void setPublication(Date publication) {
+	public void setPublication(LocalDate publication) {
 		this.publication = publication;
 	}
     

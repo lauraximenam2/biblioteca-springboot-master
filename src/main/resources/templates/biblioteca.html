@@ -13,10 +13,12 @@
         <tr>
             <th>📖 Título</th>
             <th>✍️ Autor</th>
+            <th>📅 Fecha de Publicación</th>
         </tr>
         <tr th:each="book : ${books}">
             <td th:text="${book.title}">Título</td>
             <td th:text="${book.author}">Autor</td>
+            <td th:text="${book.publication}">Fecha de Publicación</td>
         </tr>
     </table>
 
