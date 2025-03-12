@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import es.ua.biblioteca.model.Book;
 import es.ua.biblioteca.service.IBookService;
 
+//nos proporciona las vistas Thymeleaf
 @Controller
 public class ControllerTM {
 	
